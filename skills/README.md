@@ -13,8 +13,6 @@
 grill-me -> write-a-prd -> prd-to-issues -> tdd -> improve-codebase-architecture
 ```
 
-
-
 ``` sh
 # https://www.aihero.dev/5-agent-skills-i-use-every-day
 npx skills@latest add mattpocock/skills --skill grill-me --agent opencode --global
@@ -40,10 +38,10 @@ npx skills@latest add mattpocock/skills --skill qa --agent opencode --global
 ### Obsidian
 
 ``` sh
-npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-bases --agent opencode --global
-npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-markdown --agent opencode --global
-npx skills add https://github.com/kepano/obsidian-skills --skill obsidian-cli --agent opencode --global
-npx skills add https://github.com/kepano/obsidian-skills --skill json-canvas --agent opencode --global
+npx skills@latest add kepano/obsidian-skills --skill obsidian-bases --agent opencode --global
+npx skills@latest add kepano/obsidian-skills --skill obsidian-markdown --agent opencode --global
+npx skills@latest add kepano/obsidian-skills --skill obsidian-cli --agent opencode --global
+npx skills@latest add kepano/obsidian-skills --skill json-canvas --agent opencode --global
 # FIXME defuddle nix package currently broken 
 # npx skills add https://github.com/kepano/obsidian-skills --skill defuddle --agent opencode --global
 ```
@@ -61,3 +59,4 @@ npx skills add https://github.com/googleworkspace/cli --global --skill '*' --age
 - [Skills DB](https://skills.sh)
 - [Skills Best Practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
 - [Google Workspaces CLI Skill Index](https://github.com/googleworkspace/cli/blob/main/docs/skills.md)
+- [Matt Pocock: 5 Agent Skills I Use Every Day](https://www.aihero.dev/5-agent-skills-i-use-every-day)

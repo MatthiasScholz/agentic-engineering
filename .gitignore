@@ -1,0 +1,20 @@
+# Do not commit skills.sh skills
+/skills/gws-*
+/skills/obsidian-markdown/
+/skills/design-an-interface/
+/skills/edit-article/
+/skills/find-skills/
+/skills/grill-me/
+/skills/improve-codebase-architecture/
+/skills/json-canvas/
+/skills/obsidian-bases/
+/skills/obsidian-cli/
+/skills/prd-to-issues/
+/skills/prd-to-plan/
+/skills/qa/
+/skills/tdd/
+/skills/triage-issue/
+/skills/request-refactor-plan/
+/skills/ubiquitous-language/
+/skills/write-a-prd/
+/skills/write-a-skill/
