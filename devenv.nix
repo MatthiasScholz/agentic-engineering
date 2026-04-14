@@ -12,11 +12,18 @@
 
   # Main install script
   scripts.install-skills.exec = ''
+    install-skills-skills
     install-skills-obsidian
     install-skills-mattpocock
   '';
 
-  scripts.install-skill-gwp.exec = ''
+  scripts.install-skills-skills.exec = ''
+    export REPO="charon-fan/agent-playbook"
+
+    helper-skills $REPO self-improving-agent
+  '';
+
+  scripts.install-skills-gwp.exec = ''
     install-skills googleworkspace/cli "*"
   '';
 
@@ -57,6 +64,7 @@
     helper-skills $REPO qa
   '';
 
+  # NOTE WIP untested
   scripts.install-skills-understand.exec = ''
     export REPO="lum1104/understand-anything"
 
@@ -66,6 +74,13 @@
     helper-skills $REPO understand-diff
     helper-skills $REPO understand-dashboard
     helper-skills $REPO understand-explain    
+  '';
+
+  scripts.install-skills-gitai.exec = ''
+    export REPO="git-ai-project/git-ai"
+
+    helper-skills $REPO prompt-analysis
+    helper-skills $REPO git-ai-search
   '';
 
   # Helper script to call skills.sh tool.
