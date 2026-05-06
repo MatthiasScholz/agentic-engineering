@@ -15,6 +15,7 @@
     install-skills-skills
     install-skills-obsidian
     install-skills-mattpocock
+    install-skills-mitsuhiko
   '';
 
   scripts.install-skills-skills.exec = ''
@@ -81,6 +82,21 @@
 
     helper-skills $REPO prompt-analysis
     helper-skills $REPO git-ai-search
+  '';
+
+  scripts.install-skills-mitsuhiko.exec = ''
+    export REPO="mitsuhiko/agent-stuff"
+
+    helper-skills $REPO commit
+    helper-skills $REPO github
+    # NOTE naming collision with pi-web-search built-in skill -> renamed to git-mirror
+    # helper-skills $REPO librarian
+    helper-skills $REPO mermaid
+    helper-skills $REPO native-web-search
+    helper-skills $REPO openscad
+    helper-skills $REPO summarize
+    helper-skills $REPO uv
+    helper-skills $REPO web-browser
   '';
 
   # Helper script to call skills.sh tool.
