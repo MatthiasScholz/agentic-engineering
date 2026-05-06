@@ -40,6 +40,8 @@
     #helper-skills $REPO defuddle
   '';
 
+  # FIXME skills have been refactored
+  # https://github.com/mattpocock/skills/commit/71542f9d1cc45dc9c84c99e43d6c6bcc4fc523d7
   # https://www.aihero.dev/5-agent-skills-i-use-every-day
   scripts.install-skills-mattpocock.exec = ''
     export REPO="mattpocock/skills"
@@ -47,7 +49,7 @@
     # General
     helper-skills $REPO grill-me
     helper-skills $REPO write-a-skill
-    helper-skills $REPO ubiquitous-language
+    # deprecated helper-skills $REPO ubiquitous-language
     helper-skills $REPO edit-article
 
     # Planing Work
@@ -55,14 +57,14 @@
     helper-skills $REPO write-a-prd
     helper-skills $REPO prd-to-plan
     helper-skills $REPO prd-to-issues
-    helper-skills $REPO triage-issue
+    # deprecated helper-skills $REPO triage-issue
 
     # Coding
     helper-skills $REPO tdd
     helper-skills $REPO improve-codebase-architecture
-    helper-skills $REPO request-refactor-plan
+    # deprecated helper-skills $REPO request-refactor-plan
     helper-skills $REPO design-an-interface
-    helper-skills $REPO qa
+    # deprecated helper-skills $REPO qa
   '';
 
   # NOTE WIP untested
