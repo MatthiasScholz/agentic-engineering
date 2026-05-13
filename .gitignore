@@ -29,3 +29,19 @@ devenv.local.yaml
 
 # pre-commit
 .pre-commit-config.yaml
+/.agent-shell/
+/skills/defuddle/
+/skills/browser-tools/
+/skills/devenv/
+/skills/svelte-code-writer/
+/skills/svelte-core-bestpractices/
+/skills/svelte5-best-practices/
+/skills/openscad/
+/skills/commit/
+/skills/github/
+/skills/mermaid/
+/skills/native-web-search/
+/skills/summarize/
+/skills/uv/
+/skills/web-browser/
+/skills/self-improving-agent/

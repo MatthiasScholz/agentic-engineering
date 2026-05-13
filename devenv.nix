@@ -36,8 +36,7 @@
     helper-skills $REPO obsidian-cli
     helper-skills $REPO json-canvas
 
-    # NOTE defuddle nix package currently broken
-    #helper-skills $REPO defuddle
+    helper-skills $REPO defuddle
   '';
 
   # FIXME skills have been refactored
@@ -99,6 +98,28 @@
     helper-skills $REPO summarize
     helper-skills $REPO uv
     helper-skills $REPO web-browser
+  '';
+
+  scripts.install-skills-badlogic.exec = ''
+    export REPO="badlogic/pi-skills"
+
+    helper-skills $REPO browser-tools
+  '';
+
+  scripts.install-skills-devenv.exec = ''
+    export REPO="kissgyorgy/coding-agents"
+
+    helper-skills $REPO devenv
+  '';
+
+  scripts.install-skills-webfrontend.exec = ''
+    export REPO="sveltejs/ai-tools"
+
+    helper-skills $REPO svelte-code-writer
+    helper-skills $REPO svelte-core-bestpractices
+
+    export REPO="ejirocodes/agent-skills"
+    helper-skills $REPO svelte5-best-practices
   '';
 
   # Helper script to call skills.sh tool.
