@@ -47,9 +47,12 @@
 
     # General
     helper-skills $REPO grill-me
+    helper-skills $REPO grill-with-docs
     helper-skills $REPO write-a-skill
     # deprecated helper-skills $REPO ubiquitous-language
     helper-skills $REPO edit-article
+    helper-skills $REPO teach
+    helper-skills $REPO caveman
 
     # Planing Work
     # Product Requirements Document (PRD)
@@ -57,6 +60,10 @@
     helper-skills $REPO prd-to-plan
     helper-skills $REPO prd-to-issues
     # deprecated helper-skills $REPO triage-issue
+    helper-skills $REPO to-prd
+    helper-skills $REPO to-issues
+    helper-skills $REPO diagnose
+    helper-skills $REPO triage
 
     # Coding
     helper-skills $REPO tdd
@@ -64,6 +71,9 @@
     # deprecated helper-skills $REPO request-refactor-plan
     helper-skills $REPO design-an-interface
     # deprecated helper-skills $REPO qa
+    helper-skills $REPO handoff
+    helper-skills $REPO prototype
+    helper-skills $REPO zoom-out
   '';
 
   # NOTE WIP untested
@@ -75,7 +85,7 @@
     helper-skills $REPO understand-onboard
     helper-skills $REPO understand-diff
     helper-skills $REPO understand-dashboard
-    helper-skills $REPO understand-explain    
+    helper-skills $REPO understand-explain
   '';
 
   scripts.install-skills-gitai.exec = ''
