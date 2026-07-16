@@ -13,6 +13,7 @@
   # Main install script
   scripts.install-skills.exec = ''
     install-skills-skills
+    install-skills-documentation
     install-skills-obsidian
     install-skills-mattpocock
     install-skills-mitsuhiko
@@ -22,6 +23,12 @@
     export REPO="charon-fan/agent-playbook"
 
     helper-skills $REPO self-improving-agent
+  '';
+
+  scripts.install-skills-docs.exec = ''
+    export REPO="github/awesome-copilot"
+
+    helper-skills $REPO documentation-writer
   '';
 
   scripts.install-skills-gwp.exec = ''
