@@ -53,33 +53,63 @@
     export REPO="mattpocock/skills"
 
     # General
-    helper-skills $REPO grill-me
-    helper-skills $REPO grill-with-docs
+    helper-skills $REPO ask-matt
     helper-skills $REPO write-a-skill
-    # deprecated helper-skills $REPO ubiquitous-language
-    helper-skills $REPO edit-article
     helper-skills $REPO teach
+
+    # TODO Check
+    helper-skills $REPO edit-article
+
+
+    # NOTE optimizes token usage: https://www.skills.sh/mattpocock/skills/caveman
+    # TODO Check if it still exists - Matt reported not using it anymore
     helper-skills $REPO caveman
 
     # Planing Work
+    helper-skills $REPO wayfinder
+    helper-skills $REPO research
+    helper-skills $REPO grill-me
+    helper-skills $REPO grill-with-docs
+    helper-skills $REPO prototype
+
+
+    # TODO Refactor prd became spec as far a i remember
     # Product Requirements Document (PRD)
-    helper-skills $REPO write-a-prd
-    helper-skills $REPO prd-to-plan
-    helper-skills $REPO prd-to-issues
+    #helper-skills $REPO write-a-prd
+    rm -rf ~/.agents/write-a-prd
+    #helper-skills $REPO prd-to-plan
+    rm -rf ~/.agents/prd-to-plan
+    #helper-skills $REPO prd-to-issues
+    rm -rf ~/.agents/prd-to-issuse
     # deprecated helper-skills $REPO triage-issue
-    helper-skills $REPO to-prd
-    helper-skills $REPO to-issues
+
+    rm -rf ~/.agents/to-prd
+    helper-skills $REPO to-spec
+    rm -rf ~/.agents/to-issues
+    helper-skills $REPO to-tickets
+
     helper-skills $REPO diagnose
     helper-skills $REPO triage
 
     # Coding
+    helper-skills $REPO implement
     helper-skills $REPO tdd
+    helper-skills $REPO code-review
+
+    helper-skills $REPO codebase-design
     helper-skills $REPO improve-codebase-architecture
+
+    # deprecated helper-skills $REPO ubiquitous-language
+    rm -rf ~/.agents/ubiquitous-language
     # deprecated helper-skills $REPO request-refactor-plan
-    helper-skills $REPO design-an-interface
+    rm -rf ~/.agents/request-refactor-plan
+    # helper-skills $REPO design-an-interface
+    rm -rf ~/.agents/design-an-interface
     # deprecated helper-skills $REPO qa
+    rm -rf ~/.agents/qa
+
+    # Meta
     helper-skills $REPO handoff
-    helper-skills $REPO prototype
     helper-skills $REPO zoom-out
   '';
 
@@ -139,12 +169,26 @@
     helper-skills $REPO svelte5-best-practices
   '';
 
-  # Helper script to call skills.sh tool.
+  # Home Assistant MCP
+  scripts.install-skills-ha-mcp.exec = ''
+    export REPO="homeassistant-ai/skills"
+
+    helper-skills $REPO home-assistant-best-practices
+  '';
+
   # Installs into ~/.agents/skills
   # $1: repository
   # $2: skill name
   scripts.helper-skills.exec = ''
-    npx skills@latest add $1 --skill $2 --global --agent opencode
+    npx skills@latest add $1 --global --agent opencode --skill $2
+    grep -qsxF "$2" .gitignore || echo "$2" >> .gitignore
+  '';
+  # Helper script to call skills.sh tool
+  # to install all skills of the repository provided
+  # $1: repository
+  scripts.helper-skills-all.exec = ''
+    npx skills@latest add $1 --global --agent opencode
+    echo WARN :: Do not forget to update the gitignore file.
   '';
 
   enterShell = ''
